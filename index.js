@@ -428,7 +428,10 @@ module.exports = function(session) {
 
 	MySQLStore.prototype.query = function(sql, params, cb) {
 
-		var done = _.once(cb);
+		var done = function(err, result) {
+			return _.once(cb)(err, result.rows, result.fields);
+		}
+
 		var promise = this.connection.query(sql, params, done);
 
 		if (promise && _.isFunction(promise.then) && _.isFunction(promise.catch)) {
@@ -436,7 +439,7 @@ module.exports = function(session) {
 			promise.then(function(result) {
 				var rows = result[0];
 				var fields = result[1];
-				done(null, rows, fields);
+				done(null, rows.rows, fields);
 			}).catch(function(error) {
 				done(error);
 			});
