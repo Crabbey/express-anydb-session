@@ -1,7 +1,7 @@
 {
-  "name": "express-mysql-session",
-  "description": "A MySQL session store for express.js",
-  "version": "2.1.0",
+  "name": "express-anydb-session",
+  "description": "An anydb session store for express.js",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "benchmarks": "mocha test/benchmarks/ --recursive --reporter spec --ui bdd",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chill117/express-mysql-session"
+    "url": "git://github.com/crabbey/express-anydb-session"
   },
   "author": {
     "name": "Charles Hill",
@@ -24,7 +24,7 @@
   "dependencies": {
     "debug": "4.1.0",
     "express-session": "1.15.6",
-    "mysql": "2.16.0",
+    "anydb": "latest",
     "underscore": "1.9.1"
   },
   "devDependencies": {
@@ -37,6 +37,6 @@
   },
   "readmeFilename": "readme.md",
   "bugs": {
-    "url": "https://github.com/chill117/express-mysql-session/issues"
+    "url": "https://github.com/crabbey/express-anydb-session/issues"
   }
 }
